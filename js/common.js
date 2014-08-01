@@ -1,5 +1,24 @@
 head.ready(function() {
 
+	function tab() {
+		$(".js-tab-nav").each(function(){
+			var tab_link = $(this).children().find("a");
+			var tab_cont = $(this).parents(".js-tabs").find(".js-tabs-pane");
+			tab_link.bind("click", function() {
+				var index = $(this).attr("href");
+						tab_link.removeClass("is-active");
+						tab_link.parent().removeClass("is-active");
+				$(this).addClass("is-active");
+				$(this).parent().addClass("is-active");
+				tab_cont.removeClass('is-active');
+				$(index).addClass('is-active');
+				return false;
+			});
+		});
+		}
+	tab();
+
+
 	$('.js-slider').each(function(){
 		var p = this.parentNode;
 		$(this).cycle({

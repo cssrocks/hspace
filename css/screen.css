@@ -108,6 +108,7 @@ body { font-family: "helveticaneuecyr-thin", Arial, sans-serif; font-size: 16px;
 
 .timetable .timetable__days { margin-bottom: 57px; text-align: center; }
 .timetable .timetable__days li { display: inline-block; text-transform: uppercase; font-size: 42px; color: #e8e8e7; padding: 0 20px; }
+.timetable .timetable__days li a { color: inherit; text-decoration: none; }
 .timetable .timetable__days li.is-active { color: #5cb5b5; }
 .timetable .timetable__content { border-top: 1px solid #5cb5b5; padding-top: 9px; margin: 0 -30px; }
 .timetable .timetable__more { text-align: center; margin-top: 30px; margin-bottom: 40px; }
@@ -177,3 +178,21 @@ body { font-family: "helveticaneuecyr-thin", Arial, sans-serif; font-size: 16px;
 .slider .slider__prev, .slider .slider__next { position: absolute; top: 200px; font: 0/0 a; text-shadow: none; color: transparent; cursor: pointer; }
 .slider .slider__prev { background: url('../img/icons-sa48b973d5d.png') 0 -613px no-repeat; width: 26px; height: 26px; left: -10px; }
 .slider .slider__next { background: url('../img/icons-sa48b973d5d.png') 0 -649px no-repeat; width: 26px; height: 26px; right: -10px; }
+
+@-moz-keyframes fadeIn { 0% { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
+  100% { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; } }
+
+@-webkit-keyframes fadeIn { 0% { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
+  100% { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; } }
+
+@-o-keyframes fadeIn { 0% { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
+  100% { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; } }
+
+@-ms-keyframes fadeIn { 0% { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
+  100% { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; } }
+
+@keyframes fadeIn { 0% { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
+  100% { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; } }
+
+.js-tabs .js-tabs-pane { display: none; -webkit-animation: fadeIn 1s both; -moz-animation: fadeIn 1s both; -ms-animation: fadeIn 1s both; -o-animation: fadeIn 1s both; animation: fadeIn 1s both; }
+.js-tabs .js-tabs-pane.is-active { display: block; }
