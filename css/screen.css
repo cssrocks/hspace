@@ -21,9 +21,14 @@ ul, ol { list-style-type: none; }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { * { -webkit-text-size-adjust: none; } }
 table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
-body { font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; min-width: 980px; background: #53acaf; }
+@font-face { font-family: "helveticaneuecyr-thin"; src: url("../fonts/helveticaneuecyr-thin.eot"); src: url("../fonts/helveticaneuecyr-thin.eot?#iefix") format("embedded-opentype"), url("../fonts/helveticaneuecyr-thin.woff") format("woff"), url("../fonts/helveticaneuecyr-thin.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 
-.header .header__in { width: 960px; margin: 0 auto; }
+body { font-family: "helveticaneuecyr-thin", Arial, sans-serif; font-size: 14px; line-height: 1.4; min-width: 960px; background: white; color: #63625f; }
+
+.header .header__in, .news .contacts p, .news .h1, .news .news__item, .about .about__in, .place .place__in { width: 900px; margin: 0 auto; }
+
+.h1 span { border: 1px solid white; display: inline-block; min-width: 250px; text-align: center; font-size: 24px; color: white; font-weight: normal; line-height: 1; padding: 7px 0; text-transform: lowercase; }
+.h1.h1_mod span { border-color: #5cb5b5; color: #5cb5b5; }
 
 .header { background: white; }
 .header.is-fixed { position: fixed; left: 0; right: 0; min-width: 980px; z-index: 1030; }
@@ -31,16 +36,46 @@ body { font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; min-wi
 .header a:hover { color: #53acaf; }
 .header .header__in { *zoom: 1; min-height: 60px; }
 .header .header__in:after { content: " "; display: table; clear: both; }
-.header .header__logo { display: inline-block; vertical-align: top; background: url('../img/icons-s4a28a45e82.png') 0 -110px no-repeat; width: 100px; height: 39px; margin-top: 11px; margin-right: 25px; }
+.header .header__logo { display: inline-block; vertical-align: top; background: url('../img/icons-s7143062333.png') 0 -110px no-repeat; width: 100px; height: 39px; margin-top: 11px; margin-right: 29px; }
 .header .header__logo a { font: 0/0 a; text-shadow: none; color: transparent; display: block; height: 100%; }
 .header .header__menu { display: inline-block; vertical-align: top; margin-top: 20px; }
-.header .header__menu li { display: inline-block; margin-left: 25px; line-height: 1; font-size: 18px; }
+.header .header__menu li { display: inline-block; margin-left: 29px; line-height: 1; font-size: 18px; }
 .header .header__menu li:first-child { margin-left: 0; }
 .header .header__menu li.is-active a { color: #53acaf; }
 
-.social { float: right; *zoom: 1; margin-top: 19px; }
+.social { float: right; *zoom: 1; margin-top: 20px; }
 .social:after { content: " "; display: table; clear: both; }
 .social a { font: 0/0 a; text-shadow: none; color: transparent; float: left; margin-left: 17px; }
 .social a:first-child { margin-left: 0; }
-.social a.social__instagram { background: url('../img/icons-s4a28a45e82.png') 0 -159px no-repeat; width: 24px; height: 23px; }
-.social a.social__fb { background: url('../img/icons-s4a28a45e82.png') 0 -192px no-repeat; width: 24px; height: 23px; }
+.social a.social__instagram { background: url('../img/icons-s7143062333.png') 0 -159px no-repeat; width: 24px; height: 23px; }
+.social a.social__fb { background: url('../img/icons-s7143062333.png') 0 -232px no-repeat; width: 24px; height: 23px; }
+
+.intro { position: relative; background: url(../img/intro_bg.jpg); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; height: 665px; }
+.intro:before { position: absolute; top: 285px; left: 50%; margin-left: -126px; background: url('../img/icons-s7143062333.png') 0 0 no-repeat; width: 258px; height: 100px; content: ""; }
+
+.news { position: relative; color: white; background: #5cb5b5 url(../img/zip.png) repeat-x bottom; padding-bottom: 49px; }
+.news:before { height: 225px; position: absolute; top: -131px; left: 0; right: 0; background: url("../img/hline_green.png"); content: ""; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; z-index: 1; }
+.news .contacts { background: url("../img/hline_white.png"); -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; height: 225px; position: relative; top: -130px; color: #5cb5b5; padding-top: 63px; }
+.news .contacts p { position: relative; z-index: 3; font-size: 16px; text-align: right; margin-bottom: 10px; }
+.news .h1 { position: relative; padding-top: 35px; margin-bottom: 38px; margin-top: -244px; z-index: 2; }
+.news .news__in { position: relative; z-index: 2; }
+.news .news__list { padding-top: 24px; background: #e8eae9; }
+.news .news__item { *zoom: 1; position: relative; padding-left: 122px; padding-bottom: 30px; }
+.news .news__item:after { content: " "; display: table; clear: both; }
+.news .news__date { float: left; margin-left: -118px; margin-top: -9px; font-size: 28px; color: #231f20; }
+.news .news__picture { float: left; margin-right: 35px; width: 300px; min-height: 1px; }
+.news .news__picture img { display: block; }
+.news .news__text { overflow: hidden; color: #63625f; font-size: 16px; }
+.news .news__more { text-align: center; margin-top: 20px; }
+.news .news__more a { color: white; font-size: 18px; text-decoration: none; }
+.news .news__more a i { display: block; background: url('../img/icons-s7143062333.png') 0 -192px no-repeat; width: 30px; height: 30px; margin: 9px auto 0; }
+
+.about { margin-bottom: 305px; }
+.about .about__in { padding-top: 68px; }
+.about .h1 { margin-bottom: 25px; }
+.about .about__text { font-size: 16px; margin-left: 30px; }
+
+.place { position: relative; background: url(../img/place_bg.png); -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; height: 323px; margin-bottom: 34px; }
+.place .place__pic { position: relative; }
+.place .place__pic img { display: block; margin: 0 auto; position: relative; top: -132px; }
+.place .place__dot { width: 190px; text-align: center; color: white; background: #5cb5b5; position: absolute; text-transform: uppercase; padding: 5px 0; text-decoration: none; }

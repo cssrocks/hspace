@@ -1,13 +1,37 @@
++font("helveticaneuecyr-thin", "helveticaneuecyr-thin")
+$green: #5cb5b5
+$gray: #63625f
+$size-m: 16px
+
 body
-	font-family: Arial, sans-serif
+	font-family: "helveticaneuecyr-thin", Arial, sans-serif
 	font-size: 14px
 	line-height: 1.4
-	min-width: 980px
-	background: #53acaf
+	min-width: 960px
+	background: #fff
+	color: $gray
 
 %in
-	width: 960px
+	width: 900px
 	margin: 0 auto
+
+
+.h1
+	span
+		border: 1px solid #fff
+		display: inline-block
+		min-width: 250px
+		text-align: center
+		font-size: 24px
+		color: #fff
+		font-weight: normal
+		line-height: 1
+		padding: 7px 0
+		text-transform: lowercase
+	&.h1_mod
+		span
+			border-color: $green
+			color: $green
 
 .header
 	background: #fff
@@ -31,7 +55,7 @@ body
 		vertical-align: top
 		+s(logo)
 		margin-top: 11px
-		margin-right: 25px
+		margin-right: 29px
 		a
 			+hidetext
 			display: block
@@ -42,7 +66,7 @@ body
 		margin-top: 20px
 		li
 			display: inline-block
-			margin-left: 25px
+			margin-left: 29px
 			line-height: 1
 			font-size: 18px
 			&:first-child
@@ -54,7 +78,7 @@ body
 .social
 	float: right
 	+clr
-	margin-top: 19px
+	margin-top: 20px
 	a
 		+hidetext
 		float: left
@@ -67,8 +91,145 @@ body
 			+s(fb)
 
 
+.intro
+	position: relative
+	background: url(../img/intro_bg.jpg)
+	+cover
+	// background-attachment: fixed
+	height: 665px
+	&:before
+		position: absolute
+		top: 285px
+		left: 50%
+		margin-left: -126px
+		+s(logo_lg)
+		content: ""
+		
+
+.news
+	position: relative
+	color: #fff
+	background: $green url(../img/zip.png) repeat-x bottom
+	padding-bottom: 49px
+	&:before
+		height: 225px
+		position: absolute
+		top: -131px
+		left: 0
+		right: 0
+		background: url("../img/hline_green.png")
+		// +cover
+		content: ""
+		-webkit-background-size: 100% 100%
+		-o-background-size: 100% 100%
+		background-size: 100% 100%
+		z-index: 1
+	.contacts
+		background: url("../img/hline_white.png")
+		-webkit-background-size: 100% 100%
+		-o-background-size: 100% 100%
+		background-size: 100% 100%
+		// +cover
+		height: 225px
+		position: relative
+		top: -130px
+		color: $green
+		padding-top: 63px
+		p
+			position: relative
+			z-index: 3
+			font-size: 16px
+			@extend %in
+			text-align: right
+			margin-bottom: 10px
+	.h1
+		position: relative
+		@extend %in
+		padding-top: 35px
+		margin-bottom: 38px
+		margin-top: -244px
+		z-index: 2
+	.news__in
+		position: relative
+		z-index: 2
+	.news__wrap
+	.news__list
+		padding-top: 24px
+		background: #e8eae9
+	.news__item
+		@extend %in
+		+clr
+		position: relative
+		padding-left: 122px
+		padding-bottom: 30px
+	.news__date
+		float: left
+		margin-left: -118px
+		margin-top: -9px
+		font-size: 28px
+		color: #231F20
+	.news__picture
+		float: left
+		margin-right: 35px
+		width: 300px
+		min-height: 1px
+		img
+			display: block
+	.news__text
+		overflow: hidden
+		color: $gray
+		font-size: $size-m
+	.news__more
+		text-align: center
+		margin-top: 20px
+		// padding-bottom: 48px
+		a
+			color: #fff
+			font-size: 18px
+			text-decoration: none
+			i
+				display: block
+				+s(arr)
+				margin: 9px auto 0
 
 
+.about
+	margin-bottom: 305px
+	.about__in
+		@extend %in
+		padding-top: 68px
+		// padding-bottom: 70px
+	.h1
+		margin-bottom: 25px
+	.about__text
+		font-size: $size-m
+		margin-left: 30px
+.place
+	position: relative
+	background: url(../img/place_bg.png)
+	-webkit-background-size: 100% 100%
+	-o-background-size: 100% 100%
+	background-size: 100% 100%
+	height: 323px
+	margin-bottom: 34px
+	.place__in
+		@extend %in
+	.place__pic
+		position: relative
+		img
+			display: block
+			margin: 0 auto
+			position: relative
+			top: -132px
+	.place__dot
+		width: 190px
+		text-align: center
+		color: #fff
+		background: $green
+		position: absolute
+		text-transform: uppercase
+		padding: 5px 0
+		text-decoration: none
 
 
 
