@@ -5,7 +5,7 @@ $size-m: 16px
 
 body
 	font-family: "helveticaneuecyr-thin", Arial, sans-serif
-	font-size: 14px
+	font-size: 16px
 	line-height: 1.4
 	min-width: 960px
 	background: #fff
@@ -14,7 +14,6 @@ body
 %in
 	width: 900px
 	margin: 0 auto
-
 
 .h1
 	span
@@ -32,14 +31,30 @@ body
 		span
 			border-color: $green
 			color: $green
+	&.h1_upper
+		span
+			text-transform: uppercase
+
+.is-hidden
+	display: none !important
+	visibility: hidden !important
+
+.out
+	position: relative
+	width: 960px
+	margin: 0 auto
+	padding-top: 60px
+	border: 1px solid #eee
+	border-width: 0 1px
 
 .header
-	background: #fff
+	// background: #fff
 	&.is-fixed
 		position: fixed
+		top: 0
 		left: 0
 		right: 0
-		min-width: 980px
+		min-width: 960px
 		z-index: 1030
 	a
 		color: #63625f
@@ -47,7 +62,10 @@ body
 		&:hover
 			color: #53acaf
 	.header__in
-		@extend %in
+		width: 958px
+		padding: 0 29px
+		background: #fff
+		margin: 0 auto
 		+clr
 		min-height: 60px
 	.header__logo
@@ -63,7 +81,7 @@ body
 	.header__menu
 		display: inline-block
 		vertical-align: top
-		margin-top: 20px
+		margin-top: 22px
 		li
 			display: inline-block
 			margin-left: 29px
@@ -90,31 +108,31 @@ body
 		&.social__fb
 			+s(fb)
 
-
 .intro
 	position: relative
 	background: url(../img/intro_bg.jpg)
 	+cover
 	// background-attachment: fixed
-	height: 665px
+	height: 605px
 	&:before
 		position: absolute
-		top: 285px
+		top: 225px
 		left: 50%
 		margin-left: -126px
 		+s(logo_lg)
 		content: ""
-		
 
 .news
 	position: relative
 	color: #fff
-	background: $green url(../img/zip.png) repeat-x bottom
-	padding-bottom: 49px
+	background: url(../img/zip.png) repeat-x bottom
+	// padding-top: 65px
+	padding-bottom: 26px
+	margin-top: -49px
 	&:before
 		height: 225px
 		position: absolute
-		top: -131px
+		top: -80px
 		left: 0
 		right: 0
 		background: url("../img/hline_green.png")
@@ -130,29 +148,33 @@ body
 		-o-background-size: 100% 100%
 		background-size: 100% 100%
 		// +cover
-		height: 225px
-		position: relative
-		top: -130px
+		height: 250px
+		position: absolute
+		top: -81px
+		right: 0
+		padding-right: 30px
 		color: $green
-		padding-top: 63px
+		padding-top: 73px
 		p
 			position: relative
 			z-index: 3
 			font-size: 16px
 			@extend %in
 			text-align: right
-			margin-bottom: 10px
+			margin-bottom: 27px
 	.h1
 		position: relative
 		@extend %in
-		padding-top: 35px
-		margin-bottom: 38px
-		margin-top: -244px
+		margin-bottom: 40px
+		// margin-top: -299px
 		z-index: 2
 	.news__in
-		position: relative
-		z-index: 2
+		padding-top: 65px
 	.news__wrap
+		position: relative
+		z-index: 3
+		background: $green
+		padding-bottom: 20px
 	.news__list
 		padding-top: 24px
 		background: #e8eae9
@@ -160,11 +182,11 @@ body
 		@extend %in
 		+clr
 		position: relative
-		padding-left: 122px
+		padding-left: 116px
 		padding-bottom: 30px
 	.news__date
 		float: left
-		margin-left: -118px
+		margin-left: -116px
 		margin-top: -9px
 		font-size: 28px
 		color: #231F20
@@ -192,9 +214,8 @@ body
 				+s(arr)
 				margin: 9px auto 0
 
-
 .about
-	margin-bottom: 305px
+	margin-bottom: 172px
 	.about__in
 		@extend %in
 		padding-top: 68px
@@ -204,23 +225,21 @@ body
 	.about__text
 		font-size: $size-m
 		margin-left: 30px
+
 .place
 	position: relative
-	background: url(../img/place_bg.png)
-	-webkit-background-size: 100% 100%
-	-o-background-size: 100% 100%
-	background-size: 100% 100%
-	height: 323px
-	margin-bottom: 34px
-	.place__in
-		@extend %in
+	margin-bottom: 30px
 	.place__pic
 		position: relative
+		overflow: hidden
 		img
 			display: block
-			margin: 0 auto
+			margin-left: -4px
 			position: relative
-			top: -132px
+			// top: -132px
+	.place__dots
+		position: relative
+		z-index: 1
 	.place__dot
 		width: 190px
 		text-align: center
@@ -230,6 +249,319 @@ body
 		text-transform: uppercase
 		padding: 5px 0
 		text-decoration: none
+
+.box
+	color: $green
+	&.box_alt
+		.box__in
+			&:before
+				content: none
+	&.box_mod
+		background: $green
+		color: #fff
+		.box__in
+			&:before
+				+s(leaf_w)
+		.box__title
+			span
+				border-color: #fff
+	.box__in
+		position: relative
+		@extend %in
+		padding-top: 40px
+		padding-bottom: 40px
+		&:before
+			position: absolute
+			top: 0
+			left: 33px
+			+s(leaf)
+			content: ""
+	.box__title
+		text-align: right
+		margin-bottom: 35px
+		font-size: 16px
+		text-transform: uppercase
+		span
+			display: inline-block
+			padding: 4px 0
+			width: 200px
+			text-align: center
+			border: 1px solid $green
+	.box__text
+		margin-bottom: 36px
+		margin-left: 33px
+
+.schedule
+	background: url(../img/zip.png) repeat-x bottom
+	padding-bottom: 26px
+	padding-top: 25px
+	.schedule__in
+		position: relative
+		@extend %in
+		padding-top: 70px
+		// padding-bottom: 40px
+		&:before
+			position: absolute
+			top: -25px
+			left: 33px
+			+s(leaf)
+			content: ""
+	.schedule__head
+		margin-bottom: 50px
+		+clr
+		.h1
+			float: left
+		.widget
+			float: left
+			margin-left: 9px
+			img
+				display: block
+
+.timetable
+	.timetable__days
+		margin-bottom: 57px
+		text-align: center
+		li
+			display: inline-block
+			text-transform: uppercase
+			font-size: 42px
+			color: #e8e8e7
+			padding: 0 20px
+			&.is-active
+				color: $green
+	.timetable__content
+		border-top: 1px solid $green
+		padding-top: 9px
+		margin: 0 -30px
+	.timetable__item
+		@extend %in
+	.timetable__more
+		text-align: center
+		margin-top: 30px
+		margin-bottom: 40px
+		a
+			text-decoration: none
+			color: $green
+		i
+			display: block
+			margin: 12px auto 0
+			+s(arr_g)
+	.timetable__table
+		tr
+			&:first-child
+				td
+					border: none
+			&:nth-child(even)
+				td
+					background: #e8e8e7
+		td
+			font-size: 14px
+			vertical-align: middle
+			text-align: center
+			padding: 4px 10px
+			color: $gray
+			border-top: 10px solid #fff
+			&.timetable__name
+				text-align: left
+				a
+					display: inline-block
+			&.timetable__action
+				a
+					color: #797CAD
+			&:first-child
+				// border-top: none
+				background: $green !important
+				color: #fff
+			&:last-child
+				background: #fff !important
+			a
+				text-decoration: none
+				color: $gray
+
+.spec
+	background: $green
+	color: #fff
+	.spec__in
+		@extend %in
+		padding-top: 68px
+		padding-bottom: 60px
+	.h1
+		margin-bottom: 60px
+	.spec__list
+	.spec__item
+		+clr
+		margin-top: 20px
+		margin-left: 10px
+		&:first-child
+			margin-top: 0
+	.spec__pic
+		float: left
+		margin-right: 17px
+		min-height: 1px
+		width: 100px
+		background: #fff
+		overflow: hidden
+		height: 100px
+		border-radius: 50%
+		img
+			display: block
+			width: 100px
+			height: 100px
+	.spec__info
+		overflow: hidden
+		padding-top: 15px
+	.spec__name
+		font-size: 18px
+	.spec__text
+		font-size: 16px
+
+.price
+	border-top: 10px solid #fff
+	// background: $green 
+	padding-top: 60px
+	// padding-bottom: 400px
+	background: $green url(../img/zip.png) repeat-x bottom
+	// padding-top: 65px
+	padding-bottom: 26px
+	.price__in
+		padding: 0 30px
+		background: #fff
+	.price__head
+		background: $green
+		// padding-bottom: 50px
+		// margin: 0 -29px
+		@extend %in
+		// padding: 0 30px
+		.h1
+			padding-bottom: 30px
+	.price__list
+		padding-bottom: 30px
+		padding-top: 30px
+	.price__title
+		height: 40px
+		line-height: 40px
+		text-transform: uppercase
+		color: $green
+		font-size: 18px
+		background: #E8E8E7
+		padding: 0 30px
+		margin-right: 150px
+	.price__table
+		tr
+			&:nth-child(even)
+				td
+					background: #e8e8e7 
+		td
+			font-size: 18px
+			padding: 7px 30px
+			border-bottom: 10px solid #fff
+			&.price__value
+				text-align: center
+				width: 150px
+				background: $green !important
+
+.cont
+	color: #fff
+	background: $green
+	position: relative
+	&:before
+		position: absolute
+		top: 40px
+		right: 0
+		+s(leaf_v)
+		content: ""
+	.cont__in
+		@extend %in
+		padding-top: 60px
+		padding-bottom: 45px
+	.h1
+		margin-bottom: 30px
+	a
+		color: #fff
+		text-decoration: none
+	.cont__text
+		margin-bottom: 40px
+	.cont__map
+		margin: 0 -30px
+
+.faq
+	.faq__in
+		@extend %in
+		padding-top: 60px
+		padding-bottom: 20px
+	.h1
+		margin-bottom: 20px
+	.faq__list
+	.faq__item
+		padding: 0 30px
+		margin-top: 30px
+		&:first-child
+			margin-top: 0
+	.faq__question
+	.faq__answer
+		color: $green
+	.faq__more
+		text-align: center
+		padding-top: 40px
+		a
+			font-size: 18px
+			color: #797CAD
+			text-decoration: none
+			i
+				display: block
+				margin: 12px auto 0
+				+s(arr_g)
+
+.footer
+	border-top: 6px solid $green
+	.footer__in
+		@extend %in
+		padding: 20px 0 60px
+		+clr
+	.footer__copy
+		float: left
+	.social
+		float: right
+		margin-top: 3px
+	.up
+		float: right
+		display: block
+		margin-right: 78px
+		margin-top: 3px
+		text-decoration: none
+		color: $green
+
+
+.slider
+	position: relative
+	.slider__wrap
+		margin: 0 -29px
+		overflow: hidden
+	.slider__in
+		margin-left: -280px
+	.slider__slide
+		width: 488px !important
+		// float: left
+		margin-right: 26px
+		// margin-left: -300px
+		img
+			display: block
+			width: 100%
+	.slider__prev,
+	.slider__next
+		position: absolute
+		top: 200px
+		+hidetext
+		cursor: pointer
+	.slider__prev
+		+s(prev)
+		left: -10px
+	.slider__next
+		+s(next)
+		right: -10px
+
+
+
 
 
 
