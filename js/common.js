@@ -119,4 +119,10 @@ head.ready(function() {
 		});
 	});
 
+	$('.js-data-trigger').on('click', function() {
+		// $(this).parent().slideToggle('fast');
+		$('.data').slideToggle('fast');
+		return false;
+	});
+
 });

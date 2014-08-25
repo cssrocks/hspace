@@ -197,7 +197,7 @@ body { font-family: "helveticaneuecyr-thin", Arial, sans-serif; font-size: 16px;
 .js-tabs .js-tabs-pane { display: none; -webkit-animation: fadeIn 1s both; -moz-animation: fadeIn 1s both; -ms-animation: fadeIn 1s both; -o-animation: fadeIn 1s both; animation: fadeIn 1s both; }
 .js-tabs .js-tabs-pane.is-active { display: block; }
 
-.data { margin-bottom: 30px; }
+.data { padding: 40px 0; display: none; }
 .data .data__table table { table-layout: fixed; margin-top: 20px; }
 .data .data__table td { vertical-align: top; text-align: left; padding: 0 20px; font-size: 15px; }
 .data .data__table a { text-decoration: none; color: #5cb5b5; }
